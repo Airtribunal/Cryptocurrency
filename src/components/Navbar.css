@@ -1,0 +1,20 @@
+.navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.icon {
+    font-size: 2rem;
+    color: #489ab8;
+}
+
+.title {
+    font-weight: 700;
+    margin: 1rem;
+}
+
+.title span {
+    font-weight: 700;
+    color: #489ab8;
+}
