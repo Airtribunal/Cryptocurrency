@@ -5,8 +5,13 @@ import Navbar from './components/Navbar';
 
 const App = () => {
   const [coins, setCoins] = useState([])
+  const [amount, setAmount] = useState(0)
 
-  const url = "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=5&page=1&sparkline=false"
+  function handleChange(e) {
+    setAmount(e.target.value)
+  }
+
+  const url = `https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=${amount}&page=1&sparkline=false`
 
   useEffect(() => {
     axios.get(url).then((response) => {
@@ -19,7 +24,7 @@ const App = () => {
 
   return (
     <>
-      <Navbar />
+      <Navbar handleChange={handleChange}/>
       <Coins coins={coins}/>
     </>
   );
